@@ -15,7 +15,7 @@ openai==1.47.0
 
 # معالجة الملفات و OCR
 pypdf==6.1.3
-PyMuPDF==1.26.5
+PyMuPDF==1.23.8
 pdfplumber==0.11.7
 Pillow==10.3.0
 fitz
@@ -27,3 +27,4 @@ pandas==2.2.2
 sentence-transformers==5.1.2
 
 sentence-transformers
+

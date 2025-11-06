@@ -27,3 +27,5 @@ sentence-transformers==5.1.2
 
 sentence-transformers
 google
+google-generativeai
+

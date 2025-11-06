@@ -26,6 +26,4 @@ pandas==2.2.2
 sentence-transformers==5.1.2
 
 sentence-transformers
-
-
-
+google

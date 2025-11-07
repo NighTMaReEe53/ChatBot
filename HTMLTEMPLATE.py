@@ -182,7 +182,7 @@ div[data-testid="stMarkdownContainer"] table td {
 
   .st-emotion-cache-1p2n2i4 {
   
-    bottom: 35px;
+    bottom: -10px;
   }
 
   .st-emotion-cache-tn0cau {
@@ -191,4 +191,5 @@ div[data-testid="stMarkdownContainer"] table td {
   </style>
 
 '''
+
 

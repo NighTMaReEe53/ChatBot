@@ -1,53 +1,5 @@
 import pydantic.v1
 import streamlit as st
-# CSS أساسي لإخفاء العناصر الشائعة
-st.markdown("""
-<style>
-header, footer {
-    visibility: hidden !important;
-    display: none !important;
-}
-[data-testid="stDecoration"],
-[data-testid="stStatusWidget"],
-[data-testid="stToolbar"],
-[data-testid="stSidebarNav"],
-[class*="stAppDeployButton"],
-[class*="floatingActionButton"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# JavaScript لإزالة اللوجو الأحمر بعد تحميل الصفحة
-remove_logo_js = """
-<script>
-    function removeStreamlitLogo() {
-        const targets = [
-            '[data-testid="stDecoration"]',
-            '[data-testid="stStatusWidget"]',
-            '[class*="stAppDeployButton"]',
-            '[class*="floatingActionButton"]',
-            '[data-testid*="floatingActionButton"]',
-            'img[alt="Streamlit"]'
-        ];
-        targets.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => el.remove());
-        });
-    }
-
-    // تنفيذ أولي بعد التحميل
-    window.addEventListener('load', removeStreamlitLogo);
-
-    // مراقبة أي عناصر جديدة تضاف بعد التحميل
-    const observer = new MutationObserver(removeStreamlitLogo);
-    observer.observe(document.body, { childList: true, subtree: true });
-</script>
-"""
-
-st.markdown(remove_logo_js, unsafe_allow_html=True)
-
 # مثال بسيط لتأكيد التشغيل
 from langchain_groq import ChatGroq
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -557,7 +509,7 @@ def ASK_PDF_QUESTION(STORE, user_question):
 
     prompt = PromptTemplate(template=PROMPT, input_variables=["context", "question"])
 
-    model = genai.GenerativeModel(model_name="gemini-2.5-flash")
+    model = genai.GenerativeModel(model_name="gemini-2.5-pro")
 
     genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
@@ -644,4 +596,5 @@ def main():
 
 
 if __name__ == "__main__":
+
   main()
